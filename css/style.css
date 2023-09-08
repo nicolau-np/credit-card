@@ -130,7 +130,15 @@
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    box-shadow: inset 4px 3px 20px #c3a407;
+    box-shadow: inset 10px 2px 20px #8e7910;
+    animation-name: solAnimate;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-delay: 0.4s;
+    opacity: 0.1;
+    transform: scale(0.5);
 }
 
 .black-bar .atml-logo {
@@ -402,5 +410,12 @@ font-size: 8px;
 @keyframes activeCard {
     100% {
         transform: scale(1) rotateY(0);
+    }
+}
+
+@keyframes solAnimate {
+    100%{
+        opacity: 1;
+        transform: scale(1);
     }
 }
