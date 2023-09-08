@@ -236,7 +236,7 @@
     font-size: 26px;
     letter-spacing: 2px;
     font-family: 'Courier New', Courier, monospace;
-    text-shadow: 1px 1px #fff;
+    text-shadow: 0.5px 0.2px #fff;
 }
 
 .row .validate-date {
@@ -254,6 +254,7 @@
 .row .validate-date .date {
     font-family: 'Courier New', Courier, monospace;
     font-size: 18px;
+    text-shadow: 0.5px 0.2px #fff;
 }
 
 .row .chip .slot1 {
