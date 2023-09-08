@@ -149,7 +149,7 @@
 
 .black-bar .atml-logo {
     margin-top: 20px;
-    width: 60px;
+    width: 65px;
     height: 60px;
 }
 
@@ -236,6 +236,7 @@
     font-size: 26px;
     letter-spacing: 2px;
     font-family: 'Courier New', Courier, monospace;
+    text-shadow: 1px 1px #fff;
 }
 
 .row .validate-date {
@@ -363,8 +364,10 @@
 
 .assinate div {
     width: 68%;
-    height: 25px;
+    height: 30px;
     background-color: #fff;
+    border: 2px inset #ecd047;
+    box-shadow: inset 1px 1px 10px #c0c0c0;
 }
 
 .footer {
