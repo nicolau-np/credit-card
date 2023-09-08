@@ -368,6 +368,37 @@ font-size: 8px;
     font-size: 10px;
 }
 
+.row-form{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.form-group label{
+   display: block;
+   font-weight: bold;
+   font-size: 20px;
+}
+
+.form-group input{
+    height: 30px;
+    font-size: 20px;
+}
+
+.form-group input:focus{
+    outline: none;
+}
+
+.form-group input[name="valid_thru"]{
+    width: 110px;
+}
+
+.form-group input[name="card_number"]{
+    width: 230px;
+}
+
+
+
 @keyframes activeCard {
     100% {
         transform: scale(1) rotateY(0);
