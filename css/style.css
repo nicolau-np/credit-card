@@ -108,8 +108,8 @@
 }
 
 .card.active.back .black-bar {
-  position: relative;
-  z-index: 2;
+    position: relative;
+    z-index: 2;
 }
 
 .black-bar .logo .description p:first-child {
@@ -137,8 +137,7 @@
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
     animation-delay: 0.4s;
-    opacity: 0.1;
-    transform: scale(0.5);
+    transform: rotate(360deg);
 }
 
 .black-bar .atml-logo {
@@ -290,6 +289,13 @@
     text-align: center;
     position: relative;
     bottom: 12px;
+    animation-name: slotAnimate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    transform: translateX(-10px);
 }
 
 .row .chip .slot2 span:nth-child(3)::after {
@@ -298,6 +304,13 @@
     text-align: center;
     position: relative;
     bottom: 2px;
+    animation-name: slotAnimate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    transform: translateX(-10px);
 }
 
 .row .chip .slot3 {
@@ -327,7 +340,7 @@
     border-top: 1px solid #333;
 }
 
-.row-back{
+.row-back {
     position: relative;
     z-index: 2;
     display: flex;
@@ -337,71 +350,71 @@
     width: 100%;
 }
 
-.warning{
+.warning {
     width: 64%;
 }
 
-.warning p{
-font-size: 7px;
+.warning p {
+    font-size: 7px;
 }
 
-.assinate p{
-font-size: 8px;
+.assinate p {
+    font-size: 8px;
 }
 
-.assinate div{
+.assinate div {
     width: 68%;
     height: 25px;
     background-color: #fff;
 }
 
-.footer{
+.footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-right: 50px;
 }
 
-.footer .img-atm{
+.footer .img-atm {
     width: 200px;
     height: 35px;
 }
 
-.footer .img-atm img{
+.footer .img-atm img {
     width: 100%;
     height: 100%;
 }
 
-.footer .text{
+.footer .text {
     font-size: 10px;
 }
 
-.row-form{
+.row-form {
     display: flex;
     width: 100%;
     justify-content: space-around;
 }
 
-.form-group label{
-   display: block;
-   font-weight: bold;
-   font-size: 20px;
+.form-group label {
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
 }
 
-.form-group input{
+.form-group input {
     height: 30px;
     font-size: 20px;
 }
 
-.form-group input:focus{
+.form-group input:focus {
     outline: none;
 }
 
-.form-group input[name="valid_thru"]{
+.form-group input[name="valid_thru"] {
     width: 110px;
 }
 
-.form-group input[name="card_number"]{
+.form-group input[name="card_number"] {
     width: 230px;
 }
 
@@ -414,8 +427,14 @@ font-size: 8px;
 }
 
 @keyframes solAnimate {
-    100%{
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes slotAnimate {
+    100% {
         opacity: 1;
-        transform: scale(1);
+        transform: translateX(0);
     }
 }
