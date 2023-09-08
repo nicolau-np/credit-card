@@ -136,7 +136,6 @@
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
-    animation-delay: 0.4s;
     transform: rotate(360deg);
 }
 
