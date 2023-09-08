@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800;6..12,1000&display=swap');
+
+* {
+    font-family: 'Nunito Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100vh;
+    margin: 100px auto;
+    background-color: transparent;
+    border: 1px solid #ccc;
+}
+
+.card {
+    width: 450px;
+    height: 230px;
+    border: 1px solid #fff;
+    margin: 20px auto;
+    border-radius: 15px;
+    display: none;
+    box-shadow: 2px 2px 10px #fff;
+    background-color: rgba(6, 6, 6, 0.2);
+    overflow: hidden;
+}
+
+.card.active.back {
+    position: relative;
+}
+
+.card.active.front {
+    position: relative;
+}
+
+.card.active.front::before {
+    position: absolute;
+    content: "";
+    width: 60px;
+    height: 70px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 60%;
+    right: -50px;
+    box-shadow: 2px 2px 20px #c0c0c0;
+    z-index: 2;
+}
+
+.card.active.back::before {
+    position: absolute;
+    content: "";
+    width: 60px;
+    height: 70px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 60%;
+    left: -50px;
+    box-shadow: 2px 2px 20px #c0c0c0;
+    z-index: 2;
+}
+
+.card.active {
+    display: block;
+    transform: scale(0.2) rotateY(360deg);
+    animation-name: activeCard;
+    animation-timing-function: linear;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+.operations {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.operations a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    color: #333;
+    font-size: 20px;
+    border-radius: 50%;
+    text-align: none;
+    box-shadow: inset 2px 3px 10px #ccc;
+    background-color: #fff;
+}
+
+.operations a:hover {
+    color: #ccc;
+}
+
+.black-bar {
+    background-color: #0f0d0d;
+    height: 55px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.card.active.back .black-bar {
+  position: relative;
+  z-index: 2;
+}
+
+.black-bar .logo .description p:first-child {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.black-bar .logo {
+    margin-left: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.black-bar .logo .sol {
+    background-color: #ecd047;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: inset 4px 3px 20px #c3a407;
+}
+
+.black-bar .atml-logo {
+    margin-right: 20px;
+}
+
+.logo .description p:last-child {
+    font-size: 8px;
+}
+
+.black-bar .atml-logo {
+    margin-top: 20px;
+    width: 60px;
+    height: 60px;
+}
+
+.black-bar .atml-logo img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.top-bar {
+    background-color: transparent;
+    height: 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar p {
+    font-size: 8px;
+    text-transform: uppercase;
+    margin: 0 15px;
+}
+
+.card.front .top-bar p {
+    transform: rotateY(180deg) !important;
+}
+
+.card-content .row {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.card.active.front .card-content::before {
+    position: absolute;
+    content: "";
+    width: 700px;
+    height: 500px;
+    background-color: #ecd047;
+    border-radius: 50%;
+    left: 20px;
+    top: 39px;
+    z-index: 1;
+    box-shadow: inset 20px 20px 30px #f0c906;
+}
+
+.card.active.back .card-content::before {
+    position: absolute;
+    content: "";
+    width: 700px;
+    height: 500px;
+    background-color: #ecd047;
+    border-radius: 50%;
+    right: 20px;
+    top: 39px;
+    z-index: 1;
+    box-shadow: inset 20px 20px 30px #f0c906;
+}
+
+.card-content .row .chip {
+    width: 55px;
+    height: 40px;
+    border-radius: 10px;
+    margin-left: 40px;
+    display: flex;
+    background-color: #988930;
+    box-shadow: 0px 0px 5px #333;
+    overflow: hidden;
+}
+
+.card-content .row .card-number {
+    margin-left: 40px;
+    display: flex;
+    gap: 15px;
+}
+
+.row .card-number span {
+    font-size: 28px;
+    letter-spacing: 3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.row .validate-date {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-left: 50%;
+}
+
+.row .validate-date .text {
+    text-transform: uppercase;
+    font-size: 7px;
+}
+
+.row .validate-date .date {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+}
+
+.row .chip .slot1 {
+    position: relative;
+    width: 33%;
+}
+
+.row .chip .slot1 span {
+    width: 90%;
+    height: 31.3%;
+    border-left: 0px solid #333;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+    display: block;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.row .chip .slot2 {
+    position: relative;
+    width: 33%;
+}
+
+.row .chip .slot2 span {
+    width: 70%;
+    height: 31.3%;
+    padding: 0 1px;
+}
+
+.row .chip .slot2 span:nth-child(1)::after {
+    content: "__";
+    color: #333;
+    text-align: center;
+    position: relative;
+    bottom: 12px;
+}
+
+.row .chip .slot2 span:nth-child(3)::after {
+    content: "__";
+    color: #333;
+    text-align: center;
+    position: relative;
+    bottom: 2px;
+}
+
+.row .chip .slot3 {
+    position: relative;
+    width: 33%;
+}
+
+.row .chip .slot3 span {
+    width: 90%;
+    height: 31.3%;
+    border-left: 1px solid #333;
+    border-right: 0px solid #333;
+    border-bottom: 1px solid #333;
+    display: block;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    position: relative;
+    left: 1.5px;
+}
+
+.row .chip .slot3 span:nth-child(1) {
+    border-left: 0px solid #333;
+    border-bottom: 0px solid #333;
+}
+
+.row .chip .slot3 span:nth-child(2) {
+    border-top: 1px solid #333;
+}
+
+.row-back{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 8px 20px 15px 20px;
+    width: 100%;
+}
+
+.warning{
+    width: 64%;
+}
+
+.warning p{
+font-size: 7px;
+}
+
+.assinate p{
+font-size: 8px;
+}
+
+.assinate div{
+    width: 68%;
+    height: 25px;
+    background-color: #fff;
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 50px;
+}
+
+.footer .img-atm{
+    width: 200px;
+    height: 35px;
+}
+
+.footer .img-atm img{
+    width: 100%;
+    height: 100%;
+}
+
+.footer .text{
+    font-size: 10px;
+}
+
+@keyframes activeCard {
+    100% {
+        transform: scale(1) rotateY(0);
+    }
+}
